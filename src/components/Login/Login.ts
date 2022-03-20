@@ -1,19 +1,18 @@
 import Vue from "vue";
 import { Component } from "vue-property-decorator";
+import Snackbar from "../Snackbar/Snackbar";
 import { LOGIN_CONSTANTS } from "./loginConstant";
 
 @Component({
   name: "Login",
 })
-export default class Prueba extends Vue {
+export default class Login extends Vue {
   email = "";
   password = "";
   val = false;
   icon = LOGIN_CONSTANTS.PASSWORD.SHOW_ICON;
   type = LOGIN_CONSTANTS.PASSWORD.TYPE.PASSWORD;
   loading = false;
-  alert = false;
-  value = "";
   rules = {
     required: (value: any) => !!value || "Required.",
     min: (value: any) => value.length >= 8 || "Min 8 characters",
@@ -38,13 +37,11 @@ export default class Prueba extends Vue {
   async login() {
     this.loading = true;
 
-    await new Promise((resolve) => setTimeout(resolve, 3000));
-    this.alert = true;
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+
     this.loading = false;
-    console.log(this.value);
-  }
-  cerrar() {
-    console.log("cerrar");
-    this.alert = false;
+    Snackbar.popSuccess("Exito");
+    localStorage.setItem("TOKEN", "123");
+    this.$router.push("/");
   }
 }

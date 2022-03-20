@@ -1,10 +1,6 @@
 <template>
   <v-app>
-    <v-app-bar
-      app
-      color="primary"
-      dark
-    >
+    <v-app-bar app color="primary" dark v-if="this.$store.state.onSession">
       <div class="d-flex align-center">
         <v-img
           alt="Vuetify Logo"
@@ -38,16 +34,21 @@
     </v-app-bar>
 
     <v-main>
-      <router-view/>
+      <router-view />
+      <Snackbar></Snackbar>
     </v-main>
   </v-app>
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
+import Vue from "vue";
+import Snackbar from "./components/Snackbar/Snackbar.vue";
 
 export default Vue.extend({
-  name: 'App',
+  name: "App",
+  components: {
+    Snackbar,
+  },
 
   data: () => ({
     //
