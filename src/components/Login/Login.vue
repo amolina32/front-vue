@@ -1,62 +1,82 @@
 <template>
-  <v-container fluid class="login">
-    <v-container>
-      <v-row justify="center">
-        <v-col sm="6" lg="6">
-          <v-text-field
-            id="email"
-            autofocus
-            color="grey lighten-2"
-            background-color="rgb(178 159 159 / 50%)"
-            :prepend-inner-icon="EMAIL.ICON"
-            v-model="email"
-            :rules="[rules.required, rules.email]"
-            :label="EMAIL.LABEL"
-            :placeholder="EMAIL.PLACEHOLDER"
-            filled
-            rounded
-            outlined
-            dense
-          ></v-text-field>
-        </v-col>
-      </v-row>
-      <v-row justify="center">
-        <v-col sm="6" lg="6">
-          <v-text-field
-            color="grey lighten-2"
-            background-color="rgb(178 159 159 / 50%)"
-            v-model="password"
-            :prepend-inner-icon="PASSWORD.ICON"
-            :rules="[rules.required, rules.min]"
-            :append-icon="icon"
-            :label="PASSWORD.LABEL"
-            :placeholder="PASSWORD.PLACEHOLDER"
-            :hint="PASSWORD.HINT"
-            :type="type"
-            @click:append="changeIcon()"
-            counter
-            filled
-            outlined
-            rounded
-            dense
-          ></v-text-field>
-        </v-col>
-      </v-row>
-      <v-row justify="center">
-        <v-btn
-          rounded
-          outlined
-          color="warning"
-          dark
-          x-large
-          :loading="loading"
-          @click="login()"
-        >
-          Loggin
-        </v-btn>
-      </v-row>
+  <v-main class="login">
+    <v-container class="text-white text-center">
+      <h1>Log in to Vue NOW UI Dashboard Live Preview</h1>
+      <p>
+        Log in to see how you can go from frontend to fullstack in an instant
+        with an API-based Laravel backend.
+      </p>
+      <strong>You can log in with:</strong>
+      <p>Username <b>admin@jsonapi.com</b> Password <b>secret</b></p>
+      <v-container class="logo-container">
+        <v-img src="../../../public/images/now-logo.png" />
+      </v-container>
     </v-container>
-  </v-container>
+    <v-form v-model="loginForm">
+      <v-container class="prueba">
+        <v-row justify="center">
+          <v-col xs="12" sm="12" md="6" lg="5">
+            <v-text-field
+              id="email"
+              autofocus
+              :background-color="EMAIL.BACKGROUND_COLOR"
+              :prepend-inner-icon="EMAIL.ICON"
+              v-model="email"
+              :rules="[rules.required, rules.email]"
+              :label="EMAIL.LABEL"
+              :placeholder="EMAIL.PLACEHOLDER"
+              rounded
+              outlined
+              dense
+              dark
+            ></v-text-field>
+          </v-col>
+        </v-row>
+
+        <v-row justify="center">
+          <v-col xs="12" sm="12" md="6" lg="5">
+            <v-text-field
+              id="password"
+              :background-color="PASSWORD.BACKGROUND_COLOR"
+              v-model="password"
+              :prepend-inner-icon="PASSWORD.ICON"
+              :rules="[rules.required, rules.min]"
+              :append-icon="icon"
+              :label="PASSWORD.LABEL"
+              :placeholder="PASSWORD.PLACEHOLDER"
+              :hint="PASSWORD.HINT"
+              :type="type"
+              @click:append="changeIcon()"
+              outlined
+              rounded
+              dense
+              dark
+            ></v-text-field>
+          </v-col>
+        </v-row>
+        <v-row justify="center">
+          <v-btn
+            rounded
+            outlined
+            color="warning"
+            x-large
+            :loading="loading"
+            v-on:click="validateLogin()"
+          >
+            Loggin
+            <v-icon right dark>mdi-login-variant</v-icon>
+          </v-btn>
+        </v-row>
+      </v-container>
+    </v-form>
+    <v-row>
+      <v-col align="center">
+        <v-overlay v-if="loading">
+          <v-progress-circular indeterminate size="64"></v-progress-circular>
+        </v-overlay>
+      </v-col>
+    </v-row>
+  </v-main>
 </template>
 
 <script lang="ts" src="./Login"></script>

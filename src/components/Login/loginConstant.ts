@@ -3,6 +3,7 @@ export const LOGIN_CONSTANTS = {
     ICON: "mdi-email",
     PLACEHOLDER: "E-mail",
     LABEL: "E-mail",
+    BACKGROUND_COLOR: "rgb(178 159 159 / 50%)",
   },
   PASSWORD: {
     ICON: "mdi-key-variant",
@@ -15,5 +16,6 @@ export const LOGIN_CONSTANTS = {
       PASSWORD: "password",
       TEXT: "text",
     },
+    BACKGROUND_COLOR: "rgb(178 159 159 / 50%)",
   },
 };

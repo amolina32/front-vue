@@ -2,15 +2,25 @@ import Login from "@/components/Login/Login.vue";
 import Vue from "vue";
 import VueRouter, { RouteConfig } from "vue-router";
 import store from "@/store";
+import Template from "@/components/Template/Template.vue";
+import Home from "@/components/Home/Home.vue";
 Vue.use(VueRouter);
 
 const routes: Array<RouteConfig> = [
   {
     path: "/",
     name: "home",
+    component: Home,
     meta: {
       requiresAuth: true,
     },
+    children: [
+      {
+        path: "/template",
+        name: "Template",
+        component: Template,
+      },
+    ],
   },
   {
     path: "/login",
