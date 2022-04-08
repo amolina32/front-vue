@@ -7,11 +7,6 @@
         style="margin-top: 14px"
       >
       </v-list-item-icon>
-
-      <v-list-item-avatar v-if="menu.avatar">
-        <v-img :src="menu.avatar" />
-      </v-list-item-avatar>
-
       <v-list-item-content v-if="menu.title">
         <v-list-item-title v-text="menu.title" />
       </v-list-item-content>

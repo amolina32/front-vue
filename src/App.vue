@@ -1,10 +1,14 @@
 <template>
   <v-app id="app">
     <v-main>
-      <router-view></router-view>
-      <Snackbar></Snackbar>
+      <Sidebar />
+      <Snackbar />
+      <v-fade-transition mode="out-in">
+        <router-view></router-view>
+      </v-fade-transition>
     </v-main>
   </v-app>
 </template>
 
-<script lang="ts" src="./App.ts"></script>
+<script lang="ts" src="./App.ts">
+

@@ -1,10 +1,10 @@
 <template>
   <v-navigation-drawer
-    transition="scale-transition"
     app
     :expand-on-hover="variant"
     :mini-variant="variant"
     v-if="$store.state.onSession"
+    permanent
   >
     <template v-slot:prepend>
       <v-list-item class="px-2">
