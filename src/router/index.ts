@@ -16,32 +16,32 @@ const routes: Array<RouteConfig> = [
     },
     children: [
       {
-        path: "/template",
+        path: "/template/:name",
         name: "Template",
         component: Template,
       },
       {
-        path: "/template1",
+        path: "/template1/:name",
         name: "Template1",
         component: Template,
       },
       {
-        path: "/template2",
+        path: "/template2/:name",
         name: "Template2",
         component: Template,
       },
       {
-        path: "/template3",
+        path: "/template3/:name",
         name: "Template3",
         component: Template,
       },
       {
-        path: "/template4",
+        path: "/template4/:name",
         name: "Template4",
         component: Template,
       },
       {
-        path: "/template5",
+        path: "/template5/:name",
         name: "Template5",
         component: Template,
       },

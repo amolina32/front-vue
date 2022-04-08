@@ -11,5 +11,5 @@ import ListItem from "../ListItem/ListItem.vue";
   },
 })
 export default class ListGroup extends Vue {
-  @Prop() menu!: SidebarModel[];
+  @Prop() menu!: SidebarModel;
 }

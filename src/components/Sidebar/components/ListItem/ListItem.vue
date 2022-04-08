@@ -1,6 +1,6 @@
 <template>
   <v-list-item
-    :to="menu.route"
+    :to="`${menu.route}/${menu.title}`"
     active-class="primary white--text"
     link
     class="py-1"
@@ -10,10 +10,6 @@
       class="text-caption text-uppercase justify-center ml-1 my-2 align-self-center"
     >
     </v-list-item-icon>
-
-    <v-list-item-avatar v-if="menu.avatar">
-      <v-img :src="menu.avatar" />
-    </v-list-item-avatar>
 
     <v-list-item-icon v-if="menu.icon" class="my-2 align-self-center">
       <v-icon v-text="menu.icon" />
