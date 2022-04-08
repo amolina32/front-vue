@@ -1,13 +1,16 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
-
-$primaryColor: #0b3352;
-$secondaryColor: #b6bdc3;
-$accentColor: #63c7e7;
+//@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+//@import url("https://fonts.googleapis.com/css2?family=Hurricane&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dosis:wght@500&display=swap");
+// $primaryColor: #0b3352;
+// $secondaryColor: #b6bdc3;
+// $accentColor: #63c7e7;
 
 #app {
-  font-family: Montserrat;
+  //font-family: Montserrat;
+  //font-family: "Hurricane", cursive;
+  font-family: "Dosis", sans-serif;
 }
-
+/*
 .v-btn {
   text-transform: capitalize;
 }
@@ -524,3 +527,4 @@ df-messenger {
     transform: scale(1);
   }
 }
+*/

@@ -5,11 +5,9 @@
       id="snackbar"
       :key="index"
       v-model="snackbar.show"
-      min-width="0 !important"
-      max-width="70vw"
       top
-      :right="true"
-      transition="slide-x-transition"
+      right
+      transition="scroll-y-reverse-transition"
       :color="snackbar.color"
       :style="`top: ${index * 60 + 8}px`"
       :timeout="-1"
@@ -17,16 +15,16 @@
     >
       <v-icon class="mx-2">{{ snackbar.icon }}</v-icon>
       <span class="snackbar-msg">
-        <b>{{ snackbar.message + snackbar.id }}</b>
+        <b>{{ snackbar.message }}</b>
       </span>
       <template v-slot:action="{ attrs }">
         <v-btn
           id="snackbarCloseBtn"
           icon
-          @click="closeById(snackbar.id)"
+          @click="close(snackbar.id)"
           v-bind="attrs"
         >
-          <v-icon>mdi-close-circle-outline</v-icon>
+          <v-icon>mdi-close</v-icon>
         </v-btn>
       </template>
     </v-snackbar>

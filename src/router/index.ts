@@ -20,6 +20,31 @@ const routes: Array<RouteConfig> = [
         name: "Template",
         component: Template,
       },
+      {
+        path: "/template1",
+        name: "Template1",
+        component: Template,
+      },
+      {
+        path: "/template2",
+        name: "Template2",
+        component: Template,
+      },
+      {
+        path: "/template3",
+        name: "Template3",
+        component: Template,
+      },
+      {
+        path: "/template4",
+        name: "Template4",
+        component: Template,
+      },
+      {
+        path: "/template5",
+        name: "Template5",
+        component: Template,
+      },
     ],
   },
   {
