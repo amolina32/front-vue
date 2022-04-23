@@ -1,13 +1,16 @@
 import store from "@/store";
 import Vue from "vue";
-import { Component } from "vue-property-decorator";
+import { Component, Inject } from "vue-property-decorator";
 import Snackbar from "../Snackbar/Snackbar";
 import { LOGIN_CONSTANTS } from "./Constants/LoginConstants";
+import { LoginService } from "./Services/LoginService";
 
 @Component({
   name: "Login",
 })
 export default class Login extends Vue {
+  @Inject() loginService!: LoginService;
+
   email = "";
   password = "";
   val = false;
@@ -26,7 +29,7 @@ export default class Login extends Vue {
   EMAIL = LOGIN_CONSTANTS.EMAIL;
   PASSWORD = LOGIN_CONSTANTS.PASSWORD;
   loginForm = false;
-
+  users = [];
   changeIcon() {
     if (this.val) {
       this.icon = LOGIN_CONSTANTS.PASSWORD.SHOW_ICON;
@@ -38,7 +41,6 @@ export default class Login extends Vue {
     this.val = !this.val;
   }
   async login() {
-    console.log("entre al login");
     this.loading = true;
 
     await new Promise((resolve) => setTimeout(resolve, 2000));
@@ -47,6 +49,8 @@ export default class Login extends Vue {
     Snackbar.popAlert("Bienvenido", "mdi-account", "blue");
     localStorage.setItem("TOKEN", "123");
     this.$router.push("/");
+    const response = await this.loginService.getUser("12");
+    console.log("Usuarios: ", { response });
   }
 
   validateLogin() {

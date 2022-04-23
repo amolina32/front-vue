@@ -1,11 +1,10 @@
 <template>
   <v-app id="app">
     <v-main>
-      <Sidebar />
-      <Snackbar />
-      <v-fade-transition mode="out-in">
+      <ServiceProvider>
         <router-view></router-view>
-      </v-fade-transition>
+        <Snackbar></Snackbar>
+      </ServiceProvider>
     </v-main>
   </v-app>
 </template>
