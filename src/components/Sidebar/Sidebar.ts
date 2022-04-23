@@ -38,5 +38,6 @@ export default class Panel extends Vue {
     setTimeout(() => {
       Snackbar.popAlert("Alerta parametrica", "mdi-alarm-light", "black");
     }, 4000);
+    store.commit("setMenu", PANEL_CONSTANTS.MENUS);
   }
 }

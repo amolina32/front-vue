@@ -13,7 +13,7 @@ export const PANEL_CONSTANTS = {
         },
         {
           title: "Sub-Item 1.2",
-          route: "/template4",
+          route: "/template1",
           icon: "mdi-account-off",
           submenu: [],
         },
@@ -21,7 +21,7 @@ export const PANEL_CONSTANTS = {
     },
     {
       title: "Item 2",
-      route: "/template1",
+      route: "/template2",
       icon: "mdi-soundcloud",
       submenu: [],
     },
@@ -32,7 +32,7 @@ export const PANEL_CONSTANTS = {
       submenu: [
         {
           title: "Sub-Item 3.1",
-          route: "/template2",
+          route: "/template3",
           icon: "mdi-backburger",
           submenu: [],
         },
@@ -48,7 +48,7 @@ export const PANEL_CONSTANTS = {
               submenu: [
                 {
                   title: "Sub-Item 3.2.1.1",
-                  route: "/template3",
+                  route: "/template4",
                   icon: "mdi-apps",
                   submenu: [],
                 },
@@ -60,6 +60,3 @@ export const PANEL_CONSTANTS = {
     },
   ],
 };
-
-
-      

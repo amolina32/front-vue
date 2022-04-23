@@ -1,7 +1,9 @@
 <template>
   <div class="home__container">
     <div class="router__container">
-      <router-view></router-view>
+      <v-slide-y-reverse-transition mode="out-in">
+        <router-view></router-view>
+      </v-slide-y-reverse-transition>
     </div>
   </div>
 </template>

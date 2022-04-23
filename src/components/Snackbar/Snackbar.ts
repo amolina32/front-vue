@@ -82,7 +82,7 @@ export default class Snackbar extends Vue {
       message,
       icon: icon,
       color: color,
-      timeout: timeout || ALERTS.INFO.DEFAULT_TIMEOUT,
+      timeout: timeout || 5000,
     });
   }
 

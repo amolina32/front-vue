@@ -22,7 +22,7 @@
 
     <v-divider></v-divider>
 
-    <List :menus="menu" />
+    <List :menus="$store.state.menu" />
     <v-divider></v-divider>
     <template v-slot:append>
       <div class="pa-2">

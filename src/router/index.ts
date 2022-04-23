@@ -4,6 +4,7 @@ import VueRouter, { RouteConfig } from "vue-router";
 import store from "@/store";
 import Template from "@/components/Template/Template.vue";
 import Home from "@/components/Home/Home.vue";
+import Template2 from "@/components/Template2/Template2.vue";
 Vue.use(VueRouter);
 
 const routes: Array<RouteConfig> = [
@@ -23,7 +24,7 @@ const routes: Array<RouteConfig> = [
       {
         path: "/template1/:name",
         name: "Template1",
-        component: Template,
+        component: Template2,
       },
       {
         path: "/template2/:name",
@@ -33,7 +34,7 @@ const routes: Array<RouteConfig> = [
       {
         path: "/template3/:name",
         name: "Template3",
-        component: Template,
+        component: Template2,
       },
       {
         path: "/template4/:name",
@@ -43,7 +44,7 @@ const routes: Array<RouteConfig> = [
       {
         path: "/template5/:name",
         name: "Template5",
-        component: Template,
+        component: Template2,
       },
     ],
   },
