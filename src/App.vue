@@ -4,6 +4,7 @@
       <ServiceProvider>
         <router-view></router-view>
         <Snackbar></Snackbar>
+        <Sidebar></Sidebar>
       </ServiceProvider>
     </v-main>
   </v-app>

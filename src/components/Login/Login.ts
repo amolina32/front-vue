@@ -1,3 +1,4 @@
+import EventBus from "@/EventBus";
 import store from "@/store";
 import Vue from "vue";
 import { Component, Inject } from "vue-property-decorator";
@@ -42,15 +43,21 @@ export default class Login extends Vue {
   }
   async login() {
     this.loading = true;
-
-    await new Promise((resolve) => setTimeout(resolve, 2000));
-
-    this.loading = false;
-    Snackbar.popAlert("Bienvenido", "mdi-account", "blue");
-    localStorage.setItem("TOKEN", "123");
-    this.$router.push("/");
-    const response = await this.loginService.getUser("12");
-    console.log("Usuarios: ", { response });
+    try {
+      const response = await this.loginService.login(this.email, this.password);
+      if (response?.exist) {
+        this.loading = false;
+        localStorage.setItem("TOKEN", "123");
+        store.commit("setMenu", response.menu);
+        this.$router.push("/");
+        Snackbar.popAlert("Bienvenido", "mdi-account", "blue");
+      } else {
+        this.loading = false;
+        Snackbar.popError("El email o password incorrecto");
+      }
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   validateLogin() {

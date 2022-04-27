@@ -1,6 +1,7 @@
 import store from "@/store";
 import Vue from "vue";
 import Component from "vue-class-component";
+import { mapGetters } from "vuex";
 import Snackbar from "../Snackbar/Snackbar";
 import List from "./components/List/List.vue";
 import { PANEL_CONSTANTS } from "./Constants/SidebarConstants";
@@ -9,9 +10,12 @@ import { SidebarModel } from "./Models/SidebarModel";
 @Component({
   name: "Sidebar",
   components: { List },
+  computed: {
+    ...mapGetters({ menu: "getMenu" }),
+  },
 })
 export default class Panel extends Vue {
-  menu: SidebarModel[] = PANEL_CONSTANTS.MENUS;
+  menu!: SidebarModel[];
   variant = false;
 
   logOut() {
@@ -38,6 +42,5 @@ export default class Panel extends Vue {
     setTimeout(() => {
       Snackbar.popAlert("Alerta parametrica", "mdi-alarm-light", "black");
     }, 4000);
-    store.commit("setMenu", PANEL_CONSTANTS.MENUS);
   }
 }

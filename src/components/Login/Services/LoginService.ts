@@ -1,3 +1,4 @@
+import { PANEL_CONSTANTS } from "@/components/Sidebar/Constants/SidebarConstants";
 import axios from "axios";
 
 export class LoginService {
@@ -13,8 +14,9 @@ export class LoginService {
   }
 
   async login(email: string, password: string) {
+    const menu = PANEL_CONSTANTS.MENUS;
     if (email == "anthyjosemolina@gmail.com" && password == "12345678") {
-      return {};
+      return { menu, name: "Antonio Molina", profile: "Admin", exist: true };
     }
   }
 }

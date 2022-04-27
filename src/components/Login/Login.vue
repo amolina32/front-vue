@@ -1,19 +1,7 @@
 <template>
-  <v-main class="login">
-    <v-container class="text-white text-center">
-      <h1>Log in to Vue NOW UI Dashboard Live Preview</h1>
-      <p>
-        Log in to see how you can go from frontend to fullstack in an instant
-        with an API-based Laravel backend.
-      </p>
-      <strong>You can log in with:</strong>
-      <p>Username <b>admin@jsonapi.com</b> Password <b>secret</b></p>
-      <v-container class="logo-container">
-        <v-img src="../../../public/images/now-logo.png" />
-      </v-container>
-    </v-container>
-    <v-form v-model="loginForm">
-      <v-container class="prueba">
+  <v-form v-model="loginForm" class="login">
+    <v-container class="pa-10">
+      <v-card style="background-color: rgb(0 0 0 / 0%)">
         <v-row justify="center">
           <v-col xs="12" sm="12" md="6" lg="5">
             <v-text-field
@@ -67,16 +55,16 @@
             <v-icon right dark>mdi-login-variant</v-icon>
           </v-btn>
         </v-row>
-      </v-container>
-    </v-form>
-    <v-row>
-      <v-col align="center">
-        <v-overlay v-if="loading">
-          <v-progress-circular indeterminate size="64"></v-progress-circular>
-        </v-overlay>
-      </v-col>
-    </v-row>
-  </v-main>
+      </v-card>
+      <v-row>
+        <v-col align="center">
+          <v-overlay v-if="loading">
+            <v-progress-circular indeterminate size="64"></v-progress-circular>
+          </v-overlay>
+        </v-col>
+      </v-row>
+    </v-container>
+  </v-form>
 </template>
 
 <script lang="ts" src="./Login"></script>
