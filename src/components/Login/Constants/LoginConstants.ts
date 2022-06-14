@@ -18,4 +18,13 @@ export const LOGIN_CONSTANTS = {
     },
     BACKGROUND_COLOR: "rgb(178 159 159 / 50%)",
   },
+  RULES: {
+    required: (value: any) => !!value || "Campo requerido",
+    min: (value: any) => value.length >= 8 || "Minimo 8 caracteres",
+    email: (value: any) => {
+      var re =
+        /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      return re.test(value) || "E-mail invalido";
+    },
+  },
 };

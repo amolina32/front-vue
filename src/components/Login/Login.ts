@@ -18,15 +18,7 @@ export default class Login extends Vue {
   icon = LOGIN_CONSTANTS.PASSWORD.SHOW_ICON;
   type = LOGIN_CONSTANTS.PASSWORD.TYPE.PASSWORD;
   loading = false;
-  rules = {
-    required: (value: any) => !!value || "Required.",
-    min: (value: any) => value.length >= 8 || "Min 8 characters",
-    email: (value: any) => {
-      var re =
-        /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-      return re.test(value) || "Invalid e-mail.";
-    },
-  };
+  rules = LOGIN_CONSTANTS.RULES;
   EMAIL = LOGIN_CONSTANTS.EMAIL;
   PASSWORD = LOGIN_CONSTANTS.PASSWORD;
   loginForm = false;
@@ -50,7 +42,7 @@ export default class Login extends Vue {
         localStorage.setItem("TOKEN", "123");
         store.commit("setMenu", response.menu);
         this.$router.push("/");
-        Snackbar.popAlert("Bienvenido", "mdi-account", "blue");
+        Snackbar.popAlert(`Bienvenido ${response.name}`, "mdi-account", "blue");
       } else {
         this.loading = false;
         Snackbar.popError("El email o password incorrecto");

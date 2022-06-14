@@ -1,5 +1,5 @@
 <template>
-  <div class="home__container">
+  <div class="home__container" style="background-color: aliceblue">
     <div class="router__container">
       <v-slide-y-reverse-transition mode="out-in">
         <router-view></router-view>

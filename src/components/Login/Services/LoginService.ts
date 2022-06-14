@@ -5,7 +5,7 @@ export class LoginService {
   private baseUrl: string;
 
   constructor() {
-    this.baseUrl = "https://jsonplaceholder.typicode.com/users";
+    this.baseUrl = `${process.env.VUE_APP_RUTA_API}`;
   }
 
   async getUser(id: string) {
@@ -14,9 +14,15 @@ export class LoginService {
   }
 
   async login(email: string, password: string) {
-    const menu = PANEL_CONSTANTS.MENUS;
     if (email == "anthyjosemolina@gmail.com" && password == "12345678") {
-      return { menu, name: "Antonio Molina", profile: "Admin", exist: true };
+      const response = await axios.get(`${this.baseUrl}/get-user-menu/1`);
+
+      return {
+        menu: response.data,
+        name: "Antonio Molina",
+        profile: "Admin",
+        exist: true,
+      };
     }
   }
 }
